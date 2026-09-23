@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Enneagram of Transformation | Fourth Way Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swaproot{
+--gold:#ffd46b;
+--cyan:#00e1ff;
+--indigo:#5c4bff;
+--white:#f5f5f0;
+--bg:#020202;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#020202;
+color:var(--white);
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+}
+
+#space{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-3;
+background:
+radial-gradient(circle at center,#0b1026 0%,#050505 50%,#000 100%);
+}
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle linear infinite;
+}
+
+@keyframes twinkle{
+0%,100%{opacity:.2;}
+50%{opacity:1;}
+}
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+position:relative;
+}
+
+.hero-inner{
+max-width:900px;
+}
+
+.hero h1{
+font-size:clamp(3rem,7vw,8rem);
+font-family:'Cormorant Garamond',serif;
+font-weight:300;
+letter-spacing:2px;
+color:var(--gold);
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+line-height:1.8;
+opacity:.85;
+}
+
+.scroll{
+margin-top:40px;
+font-size:.9rem;
+letter-spacing:4px;
+color:var(--cyan);
+animation:float 2.5s infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(12px);}
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:80px 20px;
+position:relative;
+}
+
+.content{
+max-width:1100px;
+text-align:center;
+}
+
+.content h2{
+font-size:clamp(2rem,5vw,5rem);
+margin-bottom:25px;
+font-family:'Cormorant Garamond',serif;
+color:var(--gold);
+}
+
+.content p{
+font-size:1.15rem;
+line-height:2;
+max-width:850px;
+margin:auto;
+opacity:.9;
+}
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:all 1.5s;
+}
+
+.fade.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+#enneagramCanvas{
+width:min(85vw,850px);
+height:min(85vw,850px);
+display:block;
+margin:auto;
+filter:drop-shadow(0 0 35px rgba(255,212,107,.5));
+}
+
+.enneagram-wrap{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+gap:40px;
+}
+
+.quote{
+font-size:clamp(1.3rem,2vw,2rem);
+font-family:'Cormorant Garamond',serif;
+max-width:900px;
+line-height:1.7;
+}
+
+.cosmic-bg{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center,
+rgba(255,212,107,.08),
+transparent 60%);
+pointer-events:none;
+}
+
+.final{
+text-align:center;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.final h2{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(3rem,7vw,8rem);
+font-weight:300;
+line-height:1.1;
+}
+
+.final p{
+margin-top:30px;
+font-size:1.2rem;
+letter-spacing:3px;
+color:var(--cyan);
+}
+
+.music-panel{
+margin-top:50px;
+padding:25px;
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.03);
+border-radius:24px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+text-align:left;
+}
+
+.music-panel h3{
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.music-panel pre{
+white-space:pre-wrap;
+font-family:inherit;
+line-height:1.8;
+color:#ddd;
+}
+
+.glow{
+animation:glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+0%,100%{
+text-shadow:0 0 10px rgba(255,212,107,.4);
+}
+50%{
+text-shadow:
+0 0 30px rgba(255,212,107,.9),
+0 0 60px rgba(255,212,107,.5);
+}
+}
+
+footer{
+padding:60px 20px;
+text-align:center;
+opacity:.5;
+font-size:.85rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="space"></div>
+<div class="stars" id="stars"></div>
+
+<section class="hero">
+
+<div class="hero-inner fade">
+
+<h1 class="glow">
+THE ENNEAGRAM
+<br>
+OF TRANSFORMATION
+</h1>
+
+<p>
+A symbolic synthesis of universal law.
+The union of the Law of Three and the Law of Seven.
+A living representation of process, evolution,
+conscious shock, and awakening.
+</p>
+
+<div class="scroll">
+SCROLL TO ENTER
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="content fade">
+
+<h2>Law of Three</h2>
+
+<p>
+Every event arises from the meeting of three forces:
+active, passive, and reconciling.
+Creation is not born from opposition alone,
+but from the appearance of a third force that
+permits transformation.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="content fade">
+
+<h2>Law of Seven</h2>
+
+<p>
+Every process moves in octaves.
+Nothing develops in a straight line.
+Every movement encounters intervals,
+deviations, and missing energies.
+Without shock, every process declines
+from its original aim.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="cosmic-bg"></div>
+
+<div class="enneagram-wrap fade">
+
+<canvas id="enneagramCanvas" width="900" height="900"></canvas>
+
+<div class="quote">
+The Enneagram unites the triangle of Three and
+the hexadic movement of Seven into a single symbol
+of perpetual transformation.
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="content fade">
+
+<h2>Conscious Shock</h2>
+
+<p>
+Nature supplies part of the process.
+The rest belongs to conscious effort.
+Human evolution is not automatic.
+Awakening begins when attention becomes
+active within the process itself.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="content fade">
+
+<h2>The Human Being</h2>
+
+<p>
+The symbol describes not personality,
+but transformation.
+It points toward self-remembering,
+integration of being,
+and the possibility of conscious evolution.
+</p>
+
+</div>
+
+</section>
+
+<section class="final">
+
+<div class="fade">
+
+<h2>
+FROM ONE<br>
+TO MANY<br>
+TO ONE
+</h2>
+
+<p>
+ALL PROCESSES ARE ONE PROCESS
+</p>
+
+<div class="music-panel">
+
+<h3>Suggested SUNO Prompt</h3>
+
+<pre>
+Ultra-long-form instrumental cinematic meditation inspired by the Fourth Way Enneagram, the Law of Three and the Law of Seven. Vast cosmic atmosphere, deep sacred drones, overtone harmonic textures, crystal resonances, evolving orchestral strings, minimal piano, celestial synthesizers, profound stillness, sacred geometry translated into sound, conscious evolution, self-remembering, galactic motion, mystical transformation, timeless contemplative experience.
+
+Pure instrumental only.
+No vocals.
+No singing.
+No lyrics.
+No spoken word.
+
+Extremely slow development.
+Seamless transitions.
+Hypnotic and transcendent.
+
+Style:
+Dark Ambient,
+Sacred Orchestral,
+Neo-Classical Minimalism,
+Cosmic Meditation,
+Ritual Soundscape,
+Cinematic Spiritual Journey.
+
+Desired duration feeling:
+90–120 minutes.
+Infinite.
+Unfolding like a universe becoming conscious of itself.
+</pre>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+Fourth Way Enneagram • Law of Three • Law of Seven • Conscious Evolution
+</footer>
+
+<script>
+
+/* stars */
+
+const starsContainer = document.getElementById("stars");
+
+for(let i=0;i<250;i++){
+
+let s=document.createElement("div");
+s.className="star";
+
+let size=Math.random()*3;
+
+s.style.width=size+"px";
+s.style.height=size+"px";
+
+s.style.left=Math.random()*100+"%";
+s.style.top=Math.random()*100+"%";
+
+s.style.animationDuration=(2+Math.random()*8)+"s";
+
+starsContainer.appendChild(s);
+}
+
+/* fade observer */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+},{
+threshold:.2
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+/* enneagram animation */
+
+const canvas=document.getElementById("enneagramCanvas");
+const ctx=canvas.getContext("2d");
+
+let t=0;
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+const cx=450;
+const cy=450;
+
+const R=330;
+
+const pts=[];
+
+for(let i=0;i<9;i++){
+
+let angle=
+(-Math.PI/2)+
+(i*(Math.PI*2/9))+
+(t*0.00025);
+
+let x=cx+Math.cos(angle)*R;
+let y=cy+Math.sin(angle)*R;
+
+pts.push({x,y});
+}
+
+ctx.strokeStyle="#ffd46b";
+ctx.lineWidth=2;
+
+ctx.beginPath();
+
+for(let i=0;i<9;i++){
+
+let p=pts[i];
+
+if(i===0) ctx.moveTo(p.x,p.y);
+else ctx.lineTo(p.x,p.y);
+}
+
+ctx.closePath();
+ctx.stroke();
+
+/* triangle 3-6-9 */
+
+ctx.strokeStyle="#00e1ff";
+ctx.lineWidth=3;
+
+ctx.beginPath();
+
+[2,5,8].forEach((idx,n)=>{
+
+let p=pts[idx];
+
+if(n===0) ctx.moveTo(p.x,p.y);
+else ctx.lineTo(p.x,p.y);
+});
+
+ctx.closePath();
+ctx.stroke();
+
+/* law of seven */
+
+const seq=[0,3,1,7,4,6];
+
+ctx.strokeStyle="#ffffff";
+
+ctx.beginPath();
+
+seq.forEach((idx,n)=>{
+let p=pts[idx];
+if(n===0) ctx.moveTo(p.x,p.y);
+else ctx.lineTo(p.x,p.y);
+});
+
+ctx.closePath();
+ctx.stroke();
+
+/* points */
+
+pts.forEach((p,i)=>{
+
+ctx.beginPath();
+
+ctx.fillStyle="#ffd46b";
+ctx.shadowBlur=25;
+ctx.shadowColor="#ffd46b";
+
+ctx.arc(
+p.x,
+p.y,
+8,
+0,
+Math.PI*2
+);
+
+ctx.fill();
+
+ctx.shadowBlur=0;
+
+ctx.fillStyle="#fff";
+ctx.font="24px Inter";
+ctx.textAlign="center";
+
+ctx.fillText(
+(i+1).toString(),
+p.x,
+p.y-18
+);
+
+});
+
+t++;
+requestAnimationFrame(draw);
+}
+
+draw();
+
+/* mouse cosmic parallax */
+
+document.addEventListener('mousemove',e=>{
+
+const x=(e.clientX/window.innerWidth-.5)*20;
+const y=(e.clientY/window.innerHeight-.5)*20;
+
+document.getElementById('stars').style.transform=
+`translate(${x}px,${y}px)`;
+});
+
+</script>
+
+</body>
+</html>
