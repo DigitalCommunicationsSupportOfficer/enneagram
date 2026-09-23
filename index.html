@@ -2,603 +2,579 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The Enneagram of Transformation | Fourth Way Experience</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swaproot{
---gold:#ffd46b;
---cyan:#00e1ff;
---indigo:#5c4bff;
---white:#f5f5f0;
---bg:#020202;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#020202;
-color:var(--white);
-font-family:'Inter',sans-serif;
-overflow-x:hidden;
-}
-
-#space{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-3;
-background:
-radial-gradient(circle at center,#0b1026 0%,#050505 50%,#000 100%);
-}
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-2;
-overflow:hidden;
-}
-
-.star{
-position:absolute;
-background:white;
-border-radius:50%;
-animation:twinkle linear infinite;
-}
-
-@keyframes twinkle{
-0%,100%{opacity:.2;}
-50%{opacity:1;}
-}
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:40px;
-position:relative;
-}
-
-.hero-inner{
-max-width:900px;
-}
-
-.hero h1{
-font-size:clamp(3rem,7vw,8rem);
-font-family:'Cormorant Garamond',serif;
-font-weight:300;
-letter-spacing:2px;
-color:var(--gold);
-}
-
-.hero p{
-margin-top:20px;
-font-size:1.2rem;
-line-height:1.8;
-opacity:.85;
-}
-
-.scroll{
-margin-top:40px;
-font-size:.9rem;
-letter-spacing:4px;
-color:var(--cyan);
-animation:float 2.5s infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(12px);}
-}
-
-section{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:80px 20px;
-position:relative;
-}
-
-.content{
-max-width:1100px;
-text-align:center;
-}
-
-.content h2{
-font-size:clamp(2rem,5vw,5rem);
-margin-bottom:25px;
-font-family:'Cormorant Garamond',serif;
-color:var(--gold);
-}
-
-.content p{
-font-size:1.15rem;
-line-height:2;
-max-width:850px;
-margin:auto;
-opacity:.9;
-}
-
-.fade{
-opacity:0;
-transform:translateY(50px);
-transition:all 1.5s;
-}
-
-.fade.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-#enneagramCanvas{
-width:min(85vw,850px);
-height:min(85vw,850px);
-display:block;
-margin:auto;
-filter:drop-shadow(0 0 35px rgba(255,212,107,.5));
-}
-
-.enneagram-wrap{
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-gap:40px;
-}
-
-.quote{
-font-size:clamp(1.3rem,2vw,2rem);
-font-family:'Cormorant Garamond',serif;
-max-width:900px;
-line-height:1.7;
-}
-
-.cosmic-bg{
-position:absolute;
-inset:0;
-background:
-radial-gradient(circle at center,
-rgba(255,212,107,.08),
-transparent 60%);
-pointer-events:none;
-}
-
-.final{
-text-align:center;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.final h2{
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(3rem,7vw,8rem);
-font-weight:300;
-line-height:1.1;
-}
-
-.final p{
-margin-top:30px;
-font-size:1.2rem;
-letter-spacing:3px;
-color:var(--cyan);
-}
-
-.music-panel{
-margin-top:50px;
-padding:25px;
-border:1px solid rgba(255,255,255,.15);
-backdrop-filter:blur(20px);
-background:rgba(255,255,255,.03);
-border-radius:24px;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-text-align:left;
-}
-
-.music-panel h3{
-color:var(--gold);
-margin-bottom:15px;
-}
-
-.music-panel pre{
-white-space:pre-wrap;
-font-family:inherit;
-line-height:1.8;
-color:#ddd;
-}
-
-.glow{
-animation:glowPulse 5s ease-in-out infinite;
-}
-
-@keyframes glowPulse{
-0%,100%{
-text-shadow:0 0 10px rgba(255,212,107,.4);
-}
-50%{
-text-shadow:
-0 0 30px rgba(255,212,107,.9),
-0 0 60px rgba(255,212,107,.5);
-}
-}
-
-footer{
-padding:60px 20px;
-text-align:center;
-opacity:.5;
-font-size:.85rem;
-}
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>THE ENNEAGRAM — Law · Process · Transformation</title>
+<style>
+  :root{
+    --ink:#e8e2d6;
+    --gold:#c9a86a;
+    --dim:#6b645a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:auto;}
+  body{
+    background:#050505;
+    color:var(--ink);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    overflow-x:hidden;
+  }
+  /* ---- scroll runway ---- */
+  #runway{height:11000vh;position:relative;z-index:1;pointer-events:none;}
+  /* ---- fixed stage ---- */
+  #stage{
+    position:fixed;inset:0;z-index:0;
+    background:radial-gradient(ellipse at 50% 42%,#0b0a09 0%,#050505 62%,#020202 100%);
+  }
+  canvas#c{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  /* ---- typography layer ---- */
+  #text{
+    position:absolute;inset:0;pointer-events:none;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 6vw;
+  }
+  #text .line{
+    position:absolute;left:0;right:0;padding:0 6vw;
+    opacity:0;transform:translateY(14px);
+    transition:opacity 1.6s ease,transform 1.6s ease;
+  }
+  #text .line.on{opacity:1;transform:translateY(0);}
+  .display{
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:400;letter-spacing:.42em;text-indent:.42em;
+    font-size:clamp(20px,3.4vw,44px);color:var(--ink);
+  }
+  .display.gold{color:var(--gold);}
+  .small{
+    font-size:clamp(11px,1.05vw,14px);letter-spacing:.34em;text-indent:.34em;
+    text-transform:uppercase;color:var(--dim);margin-top:2.2em;line-height:2.1;
+  }
+  .serif-sub{
+    font-family:Georgia,"Times New Roman",serif;font-style:italic;
+    font-size:clamp(14px,1.5vw,20px);letter-spacing:.08em;color:#b9b0a0;
+    margin-top:1.8em;line-height:2;
+  }
+  .big{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(34px,7vw,96px);letter-spacing:.3em;text-indent:.3em;
+    color:var(--ink);font-weight:400;
+  }
+  /* fixed chapter word, lower third */
+  #chapter{
+    position:absolute;left:0;right:0;bottom:7vh;text-align:center;pointer-events:none;
+    font-size:11px;letter-spacing:.5em;text-indent:.5em;color:#57504a;
+    text-transform:uppercase;transition:opacity 1.4s ease;
+  }
+  /* ---- enter overlay ---- */
+  #enter{
+    position:fixed;inset:0;z-index:10;background:#030303;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    cursor:pointer;transition:opacity 2.4s ease;
+  }
+  #enter.gone{opacity:0;pointer-events:none;}
+  #enter .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--gold);
+    box-shadow:0 0 18px 4px rgba(201,168,106,.55);
+    animation:breathe 3.6s ease-in-out infinite;
+  }
+  @keyframes breathe{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.8);opacity:1}}
+  #enter .word{
+    margin-top:5.5vh;font-size:12px;letter-spacing:.6em;text-indent:.6em;color:#8a8172;
+    text-transform:uppercase;
+  }
+  #enter .hint{
+    margin-top:1.6vh;font-size:10px;letter-spacing:.35em;text-indent:.35em;color:#4a443d;
+    text-transform:uppercase;
+  }
+  /* ---- sound toggle ---- */
+  #snd{
+    position:fixed;right:22px;bottom:20px;z-index:11;
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid #3a352f;background:rgba(10,9,8,.6);
+    color:#8a8172;font-size:13px;letter-spacing:0;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;transition:border-color .4s,color .4s;user-select:none;
+  }
+  #snd:hover{border-color:var(--gold);color:var(--gold);}
+  /* progress hairline */
+  #prog{
+    position:fixed;left:0;top:0;height:2px;width:0;z-index:11;
+    background:linear-gradient(90deg,rgba(201,168,106,.15),rgba(201,168,106,.85));
+  }
+  @media (prefers-reduced-motion:reduce){
+    #enter .dot{animation:none;}
+  }
 </style>
+<base target="_blank">
 </head>
-
 <body>
 
-<div id="space"></div>
-<div class="stars" id="stars"></div>
-
-<section class="hero">
-
-<div class="hero-inner fade">
-
-<h1 class="glow">
-THE ENNEAGRAM
-<br>
-OF TRANSFORMATION
-</h1>
-
-<p>
-A symbolic synthesis of universal law.
-The union of the Law of Three and the Law of Seven.
-A living representation of process, evolution,
-conscious shock, and awakening.
-</p>
-
-<div class="scroll">
-SCROLL TO ENTER
+<div id="stage">
+  <canvas id="c"></canvas>
+  <div id="text"></div>
+  <div id="chapter"></div>
 </div>
+<div id="runway"></div>
+<div id="prog"></div>
 
+<div id="enter">
+  <div class="dot"></div>
+  <div class="word">Begin</div>
+  <div class="hint">sound on · scroll slowly</div>
 </div>
-
-</section>
-
-<section>
-
-<div class="content fade">
-
-<h2>Law of Three</h2>
-
-<p>
-Every event arises from the meeting of three forces:
-active, passive, and reconciling.
-Creation is not born from opposition alone,
-but from the appearance of a third force that
-permits transformation.
-</p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="content fade">
-
-<h2>Law of Seven</h2>
-
-<p>
-Every process moves in octaves.
-Nothing develops in a straight line.
-Every movement encounters intervals,
-deviations, and missing energies.
-Without shock, every process declines
-from its original aim.
-</p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="cosmic-bg"></div>
-
-<div class="enneagram-wrap fade">
-
-<canvas id="enneagramCanvas" width="900" height="900"></canvas>
-
-<div class="quote">
-The Enneagram unites the triangle of Three and
-the hexadic movement of Seven into a single symbol
-of perpetual transformation.
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="content fade">
-
-<h2>Conscious Shock</h2>
-
-<p>
-Nature supplies part of the process.
-The rest belongs to conscious effort.
-Human evolution is not automatic.
-Awakening begins when attention becomes
-active within the process itself.
-</p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="content fade">
-
-<h2>The Human Being</h2>
-
-<p>
-The symbol describes not personality,
-but transformation.
-It points toward self-remembering,
-integration of being,
-and the possibility of conscious evolution.
-</p>
-
-</div>
-
-</section>
-
-<section class="final">
-
-<div class="fade">
-
-<h2>
-FROM ONE<br>
-TO MANY<br>
-TO ONE
-</h2>
-
-<p>
-ALL PROCESSES ARE ONE PROCESS
-</p>
-
-<div class="music-panel">
-
-<h3>Suggested SUNO Prompt</h3>
-
-<pre>
-Ultra-long-form instrumental cinematic meditation inspired by the Fourth Way Enneagram, the Law of Three and the Law of Seven. Vast cosmic atmosphere, deep sacred drones, overtone harmonic textures, crystal resonances, evolving orchestral strings, minimal piano, celestial synthesizers, profound stillness, sacred geometry translated into sound, conscious evolution, self-remembering, galactic motion, mystical transformation, timeless contemplative experience.
-
-Pure instrumental only.
-No vocals.
-No singing.
-No lyrics.
-No spoken word.
-
-Extremely slow development.
-Seamless transitions.
-Hypnotic and transcendent.
-
-Style:
-Dark Ambient,
-Sacred Orchestral,
-Neo-Classical Minimalism,
-Cosmic Meditation,
-Ritual Soundscape,
-Cinematic Spiritual Journey.
-
-Desired duration feeling:
-90–120 minutes.
-Infinite.
-Unfolding like a universe becoming conscious of itself.
-</pre>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-Fourth Way Enneagram • Law of Three • Law of Seven • Conscious Evolution
-</footer>
+<div id="snd" title="sound">◦</div>
 
 <script>
+"use strict";
+/* ============================================================
+   THE ENNEAGRAM — an animated philosophical instrument
+   single-file build · canvas geometry · procedural web audio
+   ============================================================ */
 
-/* stars */
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const starsContainer = document.getElementById("stars");
+/* ---------- canvas ---------- */
+const cv = document.getElementById("c");
+const ctx = cv.getContext("2d");
+let W=0,H=0,DPR=1;
+function resize(){
+  DPR = Math.min(window.devicePixelRatio||1, 2);
+  W = window.innerWidth; H = window.innerHeight;
+  cv.width = W*DPR; cv.height = H*DPR;
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+}
+window.addEventListener("resize", resize); resize();
 
-for(let i=0;i<250;i++){
-
-let s=document.createElement("div");
-s.className="star";
-
-let size=Math.random()*3;
-
-s.style.width=size+"px";
-s.style.height=size+"px";
-
-s.style.left=Math.random()*100+"%";
-s.style.top=Math.random()*100+"%";
-
-s.style.animationDuration=(2+Math.random()*8)+"s";
-
-starsContainer.appendChild(s);
+/* ---------- precise enneagram geometry ----------
+   nine points on a circle; 1 at top, then clockwise 2..9.
+   septenary : 1→4→2→8→5→7→1
+   triangle  : 9→3→6→9                                        */
+const NINE = [];
+for(let i=1;i<=9;i++){
+  const a = -Math.PI/2 + (i-1)*(Math.PI*2/9);
+  NINE[i] = {x:Math.cos(a), y:Math.sin(a)};
+}
+const SEPT = [1,4,2,8,5,7,1];          // 7 points, 6 segments
+const TRI  = [9,3,6,9];                // 4 points, 3 segments
+function segPoint(path, u){            // u in [0, path.length-1]
+  const i = Math.min(Math.floor(u), path.length-2);
+  const f = u - i;
+  const A = NINE[path[i]], B = NINE[path[i+1]];
+  return {x:A.x+(B.x-A.x)*f, y:A.y+(B.y-A.y)*f, i, f};
 }
 
-/* fade observer */
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
+/* ---------- particles ---------- */
+const P = [];
+for(let i=0;i<160;i++){
+  P.push({x:Math.random(), y:Math.random(),
+          vx:(Math.random()-.5)*.00006, vy:(Math.random()-.5)*.00006,
+          s:Math.random()*1.3+.3, o:Math.random()*.5+.12,
+          tw:Math.random()*Math.PI*2});
 }
-});
-},{
-threshold:.2
-});
+const mouse = {x:.5,y:.5,active:false};
+window.addEventListener("pointermove", e=>{
+  mouse.x=e.clientX/W; mouse.y=e.clientY/H; mouse.active=true;
+},{passive:true});
 
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
+/* ---------- smooth helpers ---------- */
+const clamp=(v,a,b)=>v<a?a:v>b?b:v;
+const lerp=(a,b,f)=>a+(b-a)*f;
+const sstep=(a,b,x)=>{const t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t);};
+const gauss=(x,c,w)=>Math.exp(-((x-c)*(x-c))/(2*w*w));
 
-/* enneagram animation */
+/* ---------- chapters ---------- */
+const CH = [
+  {n:"",            a:0.000,b:0.070},
+  {n:"I · Three",   a:0.070,b:0.205},
+  {n:"II · Seven",  a:0.205,b:0.385},
+  {n:"III · The Symbol", a:0.385,b:0.520},
+  {n:"IV · Relativity",  a:0.520,b:0.700},
+  {n:"V · The Human Process", a:0.700,b:0.850},
+  {n:"VI · Synthesis",     a:0.850,b:1.001},
+];
+function chapter(p){ for(let i=CH.length-1;i>=0;i--) if(p>=CH[i].a) return i; return 0; }
+function lp(i,p){ return clamp((p-CH[i].a)/(CH[i].b-CH[i].a),0,1); }
 
-const canvas=document.getElementById("enneagramCanvas");
-const ctx=canvas.getContext("2d");
-
-let t=0;
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-const cx=450;
-const cy=450;
-
-const R=330;
-
-const pts=[];
-
-for(let i=0;i<9;i++){
-
-let angle=
-(-Math.PI/2)+
-(i*(Math.PI*2/9))+
-(t*0.00025);
-
-let x=cx+Math.cos(angle)*R;
-let y=cy+Math.sin(angle)*R;
-
-pts.push({x,y});
+/* ---------- typography director ---------- */
+const textEl = document.getElementById("text");
+const chEl   = document.getElementById("chapter");
+let shown = new Set();
+function setLines(key, list){
+  /* list: [{at, html, cls}] — timed within local progress 0..1 */
+  for(const item of list){
+    const id = key+item.at;
+    const el = document.getElementById("L"+id);
+    if(!el) continue;
+    const on = lp(key==="g"?gP:0,0)||true; // placeholder (unused)
+  }
 }
-
-ctx.strokeStyle="#ffd46b";
-ctx.lineWidth=2;
-
-ctx.beginPath();
-
-for(let i=0;i<9;i++){
-
-let p=pts[i];
-
-if(i===0) ctx.moveTo(p.x,p.y);
-else ctx.lineTo(p.x,p.y);
+/* simpler: rebuild lines per chapter, toggle by local progress */
+let curCh = -1, lineEls = [];
+function buildText(i){
+  textEl.innerHTML=""; lineEls=[]; shown.clear();
+  const defs = {
+    0:[{at:.15,h:'<div class="big" style="color:#efe9dc">1</div>',c:""},
+       {at:.55,h:'<div class="small">a point of origin</div>',c:"small"}],
+    1:[{at:.05,h:'<div class="display gold">THREE</div>',c:""},
+       {at:.42,h:'<div class="display" style="font-size:clamp(16px,2.2vw,28px)">THE LAW OF THREE</div>',c:""},
+       {at:.62,h:'<div class="serif-sub">Three forces enter into every process.</div>',c:"sub"}],
+    2:[{at:.04,h:'<div class="display gold">SEVEN</div>',c:""},
+       {at:.52,h:'<div class="display" style="font-size:clamp(16px,2.2vw,28px)">THE LAW OF SEVEN</div>',c:""},
+       {at:.68,h:'<div class="serif-sub">Every process develops through intervals.</div>',c:"sub"},
+       {at:.84,h:'<div class="serif-sub">Where development cannot continue,<br>a shock is required.</div>',c:"sub"}],
+    3:[{at:.06,h:'<div class="display" style="font-size:clamp(18px,2.6vw,34px)">THE ENNEAGRAM</div>',c:""},
+       {at:.42,h:'<div class="serif-sub">A symbol of laws within laws.</div>',c:"sub"},
+       {at:.72,h:'<div class="small">perpetual motion — a process renewing itself</div>',c:"small"}],
+    4:[{at:.08,h:'<div class="display gold">RELATIVITY</div>',c:""},
+       {at:.62,h:'<div class="serif-sub">Every process exists within a scale,<br>a level, a relationship to other processes.</div>',c:"sub"}],
+    5:[{at:.10,h:'<div class="display" style="font-size:clamp(16px,2.2vw,28px)">CONSCIOUS EVOLUTION</div>',c:""},
+       {at:.42,h:'<div class="serif-sub">Development is not merely something that happens.</div>',c:"sub"},
+       {at:.66,h:'<div class="serif-sub">It can become something consciously participated in.</div>',c:"sub"}],
+    6:[{at:.02,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">THREE FORCES</div>',c:""},
+       {at:.12,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">SEVENFOLD DEVELOPMENT</div>',c:""},
+       {at:.22,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">INTERVALS</div>',c:""},
+       {at:.32,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">SHOCKS</div>',c:""},
+       {at:.42,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">RELATIONSHIP</div>',c:""},
+       {at:.52,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">CONSCIOUS PARTICIPATION</div>',c:""},
+       {at:.62,h:'<div class="display" style="font-size:clamp(15px,1.9vw,24px);letter-spacing:.5em;text-indent:.5em">TRANSFORMATION</div>',c:""},
+       {at:.80,h:'<div class="big" style="font-size:clamp(28px,5vw,64px)">THE ENNEAGRAM</div>',c:""},
+       {at:.92,h:'<div class="serif-sub">A symbolic language of transformation.</div>',c:"sub"}],
+  }[i]||[];
+  defs.forEach((d,k)=>{
+    const el=document.createElement("div");
+    el.className="line"; el.id="L"+i+"_"+k; el.innerHTML=d.h;
+    textEl.appendChild(el);
+    lineEls.push({el, at:d.at});
+  });
+  chEl.textContent = CH[i].n;
+  chEl.style.opacity = i===0?0:1;
 }
-
-ctx.closePath();
-ctx.stroke();
-
-/* triangle 3-6-9 */
-
-ctx.strokeStyle="#00e1ff";
-ctx.lineWidth=3;
-
-ctx.beginPath();
-
-[2,5,8].forEach((idx,n)=>{
-
-let p=pts[idx];
-
-if(n===0) ctx.moveTo(p.x,p.y);
-else ctx.lineTo(p.x,p.y);
-});
-
-ctx.closePath();
-ctx.stroke();
-
-/* law of seven */
-
-const seq=[0,3,1,7,4,6];
-
-ctx.strokeStyle="#ffffff";
-
-ctx.beginPath();
-
-seq.forEach((idx,n)=>{
-let p=pts[idx];
-if(n===0) ctx.moveTo(p.x,p.y);
-else ctx.lineTo(p.x,p.y);
-});
-
-ctx.closePath();
-ctx.stroke();
-
-/* points */
-
-pts.forEach((p,i)=>{
-
-ctx.beginPath();
-
-ctx.fillStyle="#ffd46b";
-ctx.shadowBlur=25;
-ctx.shadowColor="#ffd46b";
-
-ctx.arc(
-p.x,
-p.y,
-8,
-0,
-Math.PI*2
-);
-
-ctx.fill();
-
-ctx.shadowBlur=0;
-
-ctx.fillStyle="#fff";
-ctx.font="24px Inter";
-ctx.textAlign="center";
-
-ctx.fillText(
-(i+1).toString(),
-p.x,
-p.y-18
-);
-
-});
-
-t++;
-requestAnimationFrame(draw);
+function updateText(i,p){
+  if(i!==curCh){ curCh=i; buildText(i); }
+  const l = lp(i,p);
+  for(const o of lineEls){
+    const on = l>=o.at && l<o.at+0.30;
+    if(on && !o.el.classList.contains("on")) o.el.classList.add("on");
+    if(!on && o.el.classList.contains("on") && (l<o.at||l>=o.at+0.30)) o.el.classList.remove("on");
+  }
 }
 
-draw();
+/* ---------- drawing primitives ---------- */
+function drawEnneagram(cx,cy,R,alpha,opt){
+  opt=opt||{};
+  const rot=opt.rot||0, labels=opt.labels!==false, nums=opt.numAlpha!==undefined?opt.numAlpha:alpha;
+  ctx.save();
+  ctx.translate(cx,cy); ctx.rotate(rot);
+  ctx.lineWidth = Math.max(.6, R*0.0016);
 
-/* mouse cosmic parallax */
+  /* outer circle */
+  ctx.strokeStyle=`rgba(210,198,175,${alpha*.34})`;
+  ctx.beginPath(); ctx.arc(0,0,R,0,Math.PI*2); ctx.stroke();
 
-document.addEventListener('mousemove',e=>{
+  /* triangle 9-3-6 */
+  ctx.strokeStyle=`rgba(201,168,106,${alpha*.5})`;
+  ctx.beginPath();
+  TRI.forEach((pt,k)=>{const q=NINE[pt]; k?ctx.lineTo(q.x*R,q.y*R):ctx.moveTo(q.x*R,q.y*R);});
+  ctx.stroke();
 
-const x=(e.clientX/window.innerWidth-.5)*20;
-const y=(e.clientY/window.innerHeight-.5)*20;
+  /* septenary 1-4-2-8-5-7-1 */
+  ctx.strokeStyle=`rgba(190,200,215,${alpha*.4})`;
+  ctx.beginPath();
+  SEPT.forEach((pt,k)=>{const q=NINE[pt]; k?ctx.lineTo(q.x*R,q.y*R):ctx.moveTo(q.x*R,q.y*R);});
+  ctx.stroke();
 
-document.getElementById('stars').style.transform=
-`translate(${x}px,${y}px)`;
+  /* points + numerals */
+  if(labels){
+    ctx.font=`${Math.max(9,R*0.075)}px Georgia, serif`;
+    ctx.textAlign="center"; ctx.textBaseline="middle";
+    for(let i=1;i<=9;i++){
+      const q=NINE[i];
+      ctx.fillStyle=`rgba(232,226,214,${nums*.85})`;
+      ctx.beginPath(); ctx.arc(q.x*R,q.y*R,Math.max(1.2,R*0.008),0,Math.PI*2); ctx.fill();
+      ctx.fillStyle=`rgba(232,226,214,${nums*.6})`;
+      ctx.fillText(i, q.x*R*1.14, q.y*R*1.14);
+    }
+  }
+  ctx.restore();
+}
+function glowDot(x,y,r,color,a){
+  const g=ctx.createRadialGradient(x,y,0,x,y,r*4);
+  g.addColorStop(0,color.replace("A",a));
+  g.addColorStop(1,color.replace("A",0));
+  ctx.fillStyle=g;
+  ctx.beginPath(); ctx.arc(x,y,r*4,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle=color.replace("A",Math.min(1,a*1.6));
+  ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill();
+}
+const GOLD="rgba(214,178,116,A)", BLUE="rgba(150,170,200,A)", WHITE="rgba(235,230,220,A)";
+
+function drawParticles(t,dt,intensity){
+  for(const q of P){
+    q.x+=q.vx*dt*16; q.y+=q.vy*dt*16;
+    if(q.x<0)q.x=1; if(q.x>1)q.x=0; if(q.y<0)q.y=1; if(q.y>1)q.y=0;
+    let dx=q.x-mouse.x, dy=q.y-mouse.y;
+    const d2=dx*dx+dy*dy;
+    if(mouse.active && d2<0.012){
+      const f=(0.012-d2)*0.00006*dt*16;
+      q.vx+=dx*f*60; q.vy+=dy*f*60;
+    }
+    q.vx*=0.995; q.vy*=0.995;
+    const tw=0.55+0.45*Math.sin(t*0.001+q.tw);
+    ctx.fillStyle=`rgba(215,205,185,${q.o*tw*intensity})`;
+    ctx.fillRect(q.x*W, q.y*H, q.s, q.s);
+  }
+}
+
+/* ---------- audio : procedural long-form ambient ---------- */
+let AC=null, master=null, nodes={}, sndOn=true, audioStarted=false;
+function buildAudio(){
+  AC = new (window.AudioContext||window.webkitAudioContext)();
+  master = AC.createGain(); master.gain.value=0;
+  const comp = AC.createDynamicsCompressor();
+  master.connect(comp); comp.connect(AC.destination);
+
+  /* foundational drone : two detuned sines + sub */
+  const mk=(f,g,type)=>{const o=AC.createOscillator(),gn=AC.createGain();
+    o.type=type||"sine"; o.frequency.value=f; gn.gain.value=g;
+    o.connect(gn); gn.connect(master); o.start(); return {o,gn};};
+  nodes.d1=mk(55,.10); nodes.d2=mk(55.4,.08); nodes.sub=mk(36.7,.12);
+  /* airy filtered noise */
+  const len=AC.sampleRate*4, buf=AC.createBuffer(1,len,AC.sampleRate), d=buf.getChannelData(0);
+  let last=0; for(let i=0;i<len;i++){const w=Math.random()*2-1; last=(last+.02*w)/1.02; d[i]=last*3.2;}
+  const src=AC.createBufferSource(); src.buffer=buf; src.loop=true;
+  const nf=AC.createBiquadFilter(); nf.type="lowpass"; nf.frequency.value=320; nf.Q.value=.6;
+  const ng=AC.createGain(); ng.gain.value=.05;
+  src.connect(nf); nf.connect(ng); ng.connect(master); src.start();
+  nodes.nf=nf;
+  /* third-force layer (Law of Three) */
+  nodes.t3=mk(164.8,0);
+  /* rhythmic layer (Law of Seven) : pulsed fifth */
+  nodes.p5=mk(110,0);
+  const lfo=AC.createOscillator(), lg=AC.createGain();
+  lfo.frequency.value=.13; lg.gain.value=.03;
+  lfo.connect(lg); lg.connect(nodes.p5.gn.gain); lfo.start();
+  /* intimacy layer (human process) */
+  nodes.hum=mk(329.6,0);
+  nodes.master=master;
+  master.gain.linearRampToValueAtTime(.9, AC.currentTime+8);
+}
+function shockSound(){
+  if(!AC||!sndOn) return;
+  const t=AC.currentTime;
+  const o=AC.createOscillator(), g=AC.createGain();
+  o.type="sine"; o.frequency.setValueAtTime(52,t);
+  o.frequency.exponentialRampToValueAtTime(38,t+1.4);
+  g.gain.setValueAtTime(.0001,t);
+  g.gain.exponentialRampToValueAtTime(.5,t+.03);
+  g.gain.exponentialRampToValueAtTime(.0001,t+2.2);
+  o.connect(g); g.connect(master); o.start(t); o.stop(t+2.4);
+}
+function thinSound(){
+  if(!AC||!sndOn) return;
+  const t=AC.currentTime;
+  master.gain.cancelScheduledValues(t);
+  master.gain.setValueAtTime(master.gain.value,t);
+  master.gain.linearRampToValueAtTime(.18,t+1.4);
+  master.gain.linearRampToValueAtTime(.9,t+4.2);
+}
+function updateAudio(i,p){
+  if(!AC||!audioStarted) return;
+  const t=AC.currentTime, R=(g,v)=>{g.gain.cancelScheduledValues(t);g.gain.setTargetAtTime(v,t,1.6);};
+  R(nodes.t3.gn, i>=1?.028:0.0);
+  R(nodes.p5.gn, i>=2?.022:(i===1?.006:0));
+  R(nodes.hum.gn, i===5?.012:(i===6?.02:0));
+  if(i===4){ /* relativity : filter travels microscopic↔enormous */
+    const l=lp(4,p);
+    const f = l<.5 ? lerp(300,80,sstep(0,.5,l)) : lerp(80,900,sstep(.5,1,l));
+    nodes.nf.frequency.setTargetAtTime(f,t,1.2);
+  } else nodes.nf.frequency.setTargetAtTime(320,t,2.0);
+}
+
+/* ---------- septenary driver with intervals & shocks ---------- */
+let u=0, prevSpeed=1, stallFlag=false;
+function septSpeed(x){ /* two gaussian stalls : the intervals */
+  return Math.max(.0008, 1 - .985*gauss(x,2.5,.09) - .985*gauss(x,4.62,.09));
+}
+
+/* ---------- main render ---------- */
+const prog=document.getElementById("prog");
+let lastT=performance.now(), gP=0;
+
+function frame(now){
+  const dt=Math.min(.05,(now-lastT)/1000); lastT=now;
+  const t=now;
+  const doc=document.documentElement;
+  const max=doc.scrollHeight-window.innerHeight;
+  const p = max>0 ? clamp(window.scrollY/max,0,1) : (Math.sin(t*.00004)+1)/2*0.999;
+  gP=p;
+  prog.style.width=(p*100)+"%";
+
+  const i=chapter(p), l=lp(i,p);
+  updateText(i,p);
+  updateAudio(i,p);
+
+  ctx.clearRect(0,0,W,H);
+  const cx=W/2, cy=H*0.44, R=Math.min(W,H)*0.30;
+  const motion = reduced ? .12 : 1;
+  const rot = motion*(0.03*Math.sin(t*.00007)+0.02*Math.sin(t*.000113+1.7));
+
+  /* global vignette pulse */
+  drawParticles(t,dt*motion, i===0? sstep(0,.6,l)*.9 : .8);
+
+  ctx.save();
+
+  if(i===0){
+    /* ------- opening : a point of light becomes 1 ------- */
+    const a=sstep(.02,.5,l);
+    const r=lerp(1.5,4.5,a)*(1+.25*Math.sin(t*.002));
+    glowDot(cx,cy,r,GOLD,a);
+    ctx.font=`${Math.min(W,H)*.16}px Georgia, serif`;
+    ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.fillStyle=`rgba(238,232,220,${sstep(.55,.8,l)})`;
+    ctx.fillText("1",cx,cy-R*0.92);
+    if(l>.5) drawEnneagram(cx,cy,R,sstep(.55,1,l)*.5,{rot:rot*.4,labels:false});
+  }
+
+  else if(i===1){
+    /* ------- Law of Three : three streams converge ------- */
+    const a=sstep(0,.25,l);
+    drawEnneagram(cx,cy,R,.30*a,{rot,labels:false});
+    const meet=sstep(.12,.5,l);
+    const cols=[GOLD,BLUE,WHITE];
+    const names=[[NINE[9],NINE[3]],[NINE[3],NINE[6]],[NINE[6],NINE[9]]];
+    for(let k=0;k<3;k++){
+      const A=names[k][0],B=names[k][1];
+      const px=lerp(A.x,B.x,meet)*R, py=lerp(A.y,B.y,meet)*R;
+      glowDot(cx+px,cy+py,3,cols[k],a*(.35+.65*Math.sin(t*.001+k*2.1)**2));
+    }
+    drawEnneagram(cx,cy,R,sstep(.4,.75,l),{rot,numAlpha:sstep(.55,.85,l)});
+  }
+
+  else if(i===2){
+    /* ------- Law of Seven : uneven movement, intervals, shocks ------- */
+    const a=sstep(0,.15,l);
+    drawEnneagram(cx,cy,R,.4*a,{rot,labels:l>.1,numAlpha:a*.5});
+    const sp=septSpeed(u);
+    const active = l>.08 && l<.97;
+    if(active && !reduced) u += dt*motion*(0.55+1.1*sstep(.15,.6,l))*sp;
+    const ub = u % 6;
+    const pos=segPoint(SEPT,ub);
+    const px=pos.x*R, py=pos.y*R;
+    /* trail */
+    ctx.strokeStyle=`rgba(214,178,116,${.35*a})`;
+    ctx.lineWidth=1.2;
+    ctx.beginPath();
+    for(let s=0;s<=24;s++){
+      const q=segPoint(SEPT,(ub - s*.02+6)%6);
+      s?ctx.lineTo(cx+q.x*R,cy+q.y*R):ctx.moveTo(cx+q.x*R,cy+q.y*R);
+    }
+    ctx.stroke();
+    const falter = sp<.06;
+    glowDot(cx+px,cy+py, falter?2.2:3.4, GOLD, a*(falter?.25:.9));
+    /* shock flash on recovery */
+    if(falter && !stallFlag){ stallFlag=true; thinSound(); }
+    if(!falter && stallFlag){ stallFlag=false; if(l>.2&&l<.95) shockSound(); }
+    if(falter){
+      ctx.fillStyle=`rgba(0,0,0,${.35+.1*Math.sin(t*.01)})`;
+      ctx.fillRect(0,0,W,H);
+    } else if(stallFlag===false && sp>.9 && l>.2){
+      /* just-resumed glow */
+    }
+  }
+
+  else if(i===3){
+    /* ------- complete symbol : perpetual motion ------- */
+    const a=sstep(0,.2,l);
+    drawEnneagram(cx,cy,R,a,{rot:rot*1.6,labels:true,numAlpha:a});
+    /* circulating energies: one on septenary, one on triangle */
+    const us=(t*.00011)%6, ut=(t*.00007)%3;
+    const p1=segPoint(SEPT,us), p2=segPoint(TRI,ut);
+    glowDot(cx+p1.x*R,cy+p1.y*R,3,GOLD,a*.9);
+    glowDot(cx+p2.x*R,cy+p2.y*R,2.6,BLUE,a*.75);
+    /* energy leaks between the two figures */
+    ctx.strokeStyle=`rgba(200,190,170,${a*.10*(0.5+0.5*Math.sin(t*.0004))})`;
+    ctx.lineWidth=.7;
+    ctx.beginPath(); ctx.moveTo(cx+p1.x*R,cy+p1.y*R); ctx.lineTo(cx+p2.x*R,cy+p2.y*R); ctx.stroke();
+  }
+
+  else if(i===4){
+    /* ------- relativity : scale travel ------- */
+    const a=.9;
+    let cam;
+    if(l<.45) cam=lerp(1,.14,sstep(0,.45,l));       /* zoom out  */
+    else if(l<.62) cam=.14;                          /* hold      */
+    else cam=lerp(.14,4.5,sstep(.62,1,l));           /* zoom in   */
+    ctx.translate(cx,cy); ctx.scale(cam,cam); ctx.translate(-cx,-cy);
+    drawEnneagram(cx,cy,R,a,{rot,labels:cam>.4,numAlpha:clamp(cam,0,1)});
+    if(cam<.5){ /* sibling systems appear */
+      const appear=sstep(.1,.4,l);
+      for(let gx=-1;gx<=1;gx++) for(let gy=-1;gy<=1;gy++){
+        if(!gx&&!gy) continue;
+        drawEnneagram(cx+gx*R*3.4, cy+gy*R*3.4, R*.8, appear*.5,
+          {rot:rot*(1+gx*.3+gy*.17), labels:false});
+      }
+      glowDot(cx,cy,3/cam,GOLD,.8);
+    }
+    if(cam>1.2){ /* a single point becomes a world */
+      glowDot(cx+NINE[1].x*R, cy+NINE[1].y*R, 5*cam, GOLD, clamp((cam-1.2)/2,0,.9));
+    }
+  }
+
+  else if(i===5){
+    /* ------- human process : repetition → awareness → participation --- */
+    const a=sstep(0,.12,l);
+    drawEnneagram(cx,cy,R,.45*a,{rot:rot*.7,labels:false});
+    const mech = l<.45;
+    let uh;
+    if(mech) uh=(t*.00016)%6;                         /* mechanical repetition */
+    else uh=(t*.00010 + .4*Math.sin(t*.00023))%6;     /* participatory drift */
+    const hp=segPoint(SEPT,uh);
+    glowDot(cx+hp.x*R,cy+hp.y*R,2.8,WHITE,a*.85);
+    if(l>.45){ /* second light : conscious attention */
+      const meet=sstep(.45,.78,l);
+      const ap=segPoint(SEPT,(uh+.8*(1-meet)+.0)%6);
+      const ax=lerp(NINE[3].x,ap.x,meet)*R, ay=lerp(NINE[3].y,ap.y,meet)*R;
+      glowDot(cx+ax,cy+ay,2.6,GOLD,a*.9*meet);
+      if(meet>.97){ /* they interact : the geometry answers */
+        drawEnneagram(cx,cy,R,(.45+.3*Math.sin(t*.0006)**2)*a,{rot:rot*.7,labels:false});
+        ctx.strokeStyle=`rgba(235,230,220,${.22+.16*Math.sin(t*.0009)})`;
+        ctx.lineWidth=.8;
+        ctx.beginPath();ctx.moveTo(cx+hp.x*R,cy+hp.y*R);ctx.lineTo(cx+ax,cy+ay);ctx.stroke();
+      }
+    }
+  }
+
+  else {
+    /* ------- final synthesis ------- */
+    drawEnneagram(cx,cy,R,.95,{rot:rot*2.2,labels:true,numAlpha:.9});
+    const us=(t*.00011)%6, ut=(t*.00007)%3;
+    const p1=segPoint(SEPT,us), p2=segPoint(TRI,ut);
+    glowDot(cx+p1.x*R,cy+p1.y*R,3,GOLD,.9);
+    glowDot(cx+p2.x*R,cy+p2.y*R,2.6,BLUE,.7);
+    const breathe=.5+.5*Math.sin(t*.00018);
+    ctx.fillStyle=`rgba(201,168,106,${.02+.02*breathe})`;
+    ctx.fillRect(0,0,W,H);
+  }
+
+  ctx.restore();
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* ---------- enter / sound ---------- */
+const enterEl=document.getElementById("enter");
+const sndEl=document.getElementById("snd");
+enterEl.addEventListener("click",()=>{
+  enterEl.classList.add("gone");
+  if(!audioStarted){ audioStarted=true; try{ buildAudio(); }catch(e){} }
+  else if(AC&&AC.state==="suspended") AC.resume();
+  sndEl.textContent="◉";
 });
-
+sndEl.addEventListener("click",()=>{
+  if(!audioStarted){ audioStarted=true; try{buildAudio();}catch(e){} sndEl.textContent="◉"; return; }
+  sndOn=!sndOn;
+  if(AC){ sndOn?AC.resume():AC.suspend(); }
+  sndEl.textContent=sndOn?"◉":"◦";
+});
 </script>
-
 </body>
 </html>
